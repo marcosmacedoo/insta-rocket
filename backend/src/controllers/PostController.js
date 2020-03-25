@@ -37,5 +37,13 @@ module.exports = {
     req.io.emit('post', post)
 
     return res.json(post)
+  },
+
+  async destroy(req, res) {
+    const { id } = req.params
+
+    await Post.deleteOne({ _id: id })
+
+    return res.json({ msg: 'Post removed with successfully' })
   }
 }

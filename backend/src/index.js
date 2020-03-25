@@ -4,9 +4,10 @@ const path = require('path')
 const cors = require('cors')
 const http = require('http')
 const socketIo = require('socket.io')
+
 const routes = require('./routes')
 
-const PORTA = 3000
+const PORTA = 3333
 const app = express()
 const server = http.Server(app)
 const io = socketIo(server)
@@ -31,5 +32,5 @@ app.use('/files', express.static(
 app.use(routes)
 
 app.listen(PORTA,
-    () => console.log(`Servidor rodando em http://localhost:${PORTA}`)
+  () => console.log(`Servidor rodando em http://localhost:${PORTA}`)
 )

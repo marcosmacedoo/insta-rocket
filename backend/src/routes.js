@@ -12,4 +12,6 @@ routes.post('/posts', upload.single('image'), PostController.store)
 
 routes.post('/posts/:id/like', LikeController.store)
 
+routes.delete('/posts/:id', PostController.destroy)
+
 module.exports = routes
